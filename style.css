@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+body{
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    font-family: 'Exo', sans-serif;
+    font-size: 22px;
+}
+main{
+    width: 100%;
+    text-align: center;
+}
+#enterDetails{
+    float:left;
+    height: 2%;
+    width: 50%;
+    background-color: transparent;
+    color: black;
+}
+#findDetails{
+    float:left;
+    height: 2%;
+    width: 50%;
+    background-color:transparent;
+    color:black;
+}
+  /* input css */
+input{
+    height: 20px;
+    width: 200px;
+    font-size: 20px;
+    border-radius: 20px;
+    transition: border-color 0.3s ease;
+}
+
+input::placeholder {
+    color: black;
+    font-size: 16px;
+  }
+ 
+  input[type="text"],[type="number"]{
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"],[type="number"]:hover {
+    border-color: #3498db; /* Change border color on hover */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.7); /* Add box shadow on hover */
+}
+ /* button effect */
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+  
+
+/* body background */
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 300% 300%;
+    background-image: linear-gradient(-45deg, yellow 0%, yellow 25%, yellow 51%, #ff357f 100%);
+    -webkit-animation: AnimateBG 20s ease infinite;
+            animation: AnimateBG 20s ease infinite;
+  }
+  
+  @-webkit-keyframes AnimateBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @keyframes AnimateBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+/* media query */
+/* Media query for screens smaller than 768px (e.g., smartphones) */
+@media (max-width: 768px) {
+  main {
+    display: flex;
+    flex-direction:column;
+    font-size: 14px;
+    font-weight: 14px;
+  }
+
+ 
+}
+
+/* Media query for screens between 768px and 1024px (e.g., tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  main {
+    font-size: 18px;
+  }
+}
+
+/* Media query for screens larger than 1024px (e.g., desktops) */
+@media (min-width: 1025px) {
+  main {
+    font-size: 20px;
+  }
+}
+
+ 
